@@ -14,4 +14,6 @@ echo "====> Start env"
 env
 echo "====> End env"
 
+docker buildx create --use
+
 /bin/sh -c "porter $INPUT_COMMAND"
