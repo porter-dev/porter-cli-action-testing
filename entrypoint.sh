@@ -6,6 +6,10 @@ echo "====> Start Docker Info"
 docker info
 echo "====> End Docker Info"
 
+echo "====> Start buildx ls"
+docker buildx ls
+echo "====> End buildx ls"
+
 echo "====> Start env"
 env
 echo "====> End env"
