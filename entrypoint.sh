@@ -14,9 +14,13 @@ echo "====> Start env"
 env
 echo "====> End env"
 
-docker buildx create --use
+set -x
 echo "====> Start build"
-docker build -f Dockerfile --cache-to type=gha --cache-from type=gha .
+docker build -f Dockerfile --cache-to type=gha --cache-from type=gha . || true
 echo "====> End build"
+set +x
+
+sleep 3
+
 
 /bin/sh -c "porter $INPUT_COMMAND"
